@@ -25,7 +25,20 @@
   ```bash
   python3 ~/tools/ParamSpider/paramspider.py --domain "site.com" --exclude woff,css,js,png,svg,jpg --level high --quiet --output paramspider.txt &> /dev/null
   ```
+     Sort
+     
   ```bash
   cat paramspiderout.txt hakrawler.out| sort -u | uniq -u > params_outfinal.txt
   ```
   
+ - gf
+  - sort
+  ```bash
+    cat params_outfinal.txt | gf xss | sed 's/=.*/=/' | sed 's/URL: //' > xss.txt
+    cat params_outfinal.txt | gf ssrf > ssrf.txt
+    cat params_outfinal.txt | gf ssti > ssti.txt
+    cat params_outfinal.txt | gf redirect > redirect.txt
+    cat params_outfinal.txt | gf sqli > sqli.txt
+    cat params_outfinal.txt | gf lfi > lfi.txt
+    cat params_outfinal.txt | gf rce > rce.txt
+  ```
