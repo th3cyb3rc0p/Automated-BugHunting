@@ -32,7 +32,7 @@
   ```
   
  - gf
-  - sort
+   - sort
   ```bash
     cat params_outfinal.txt | gf xss | sed 's/=.*/=/' | sed 's/URL: //' > xss.txt
     cat params_outfinal.txt | gf ssrf > ssrf.txt
